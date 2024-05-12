@@ -1,0 +1,25 @@
+import { useEffect,useState } from "react";
+
+function Timer(){
+    const[count,setCount]=useState(1)
+    useEffect(()=>{
+        Checkout()
+        
+    },[count])
+
+    function Checkout(){
+        if(count>10)
+            setCount(1)
+    }
+
+    function updatenow(){
+
+        setCount((previousState)=>{return previousState+1})
+    }
+
+    return <><h1>I have render {count} times. </h1>
+    <button onClick={updatenow}>Increase</button>
+    </>
+}
+
+export default Timer;
